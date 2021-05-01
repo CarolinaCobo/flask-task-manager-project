@@ -124,6 +124,14 @@ def add_task():
     return render_template("add_task.html", categories=categories)
 
 
+@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
+def edit_task(task_id):
+    # _id is like the primary key in relational DB and will identify it in our DB
+    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_task.html", task=task, categories=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
