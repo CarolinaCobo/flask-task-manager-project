@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align light-teal-text text-darken-4">Add Task</h3>
+
+<div class="row">
+    <form class="col s12" method="POST" action="">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-circle prefix text-darken-4"></i>
+                <textarea id="icon_prefix" class="materialize-textarea"></textarea>
+                <label for="icon_prefix">First Name</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="fas fa-phone prefix text-darken-4"></i>
+                <textarea id="icon-telephone" class="materialize-textarea"></textarea>
+                <label for="icon_prefix2">First Name</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
