@@ -2,13 +2,14 @@
 {% block content %}
 
     <h3 class="light-teal-text text-darken-4 center-align">Add Task</h3>
-
+    <!-- Category selection -->
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-teal-text text-darken-4"></i>
 					<select id="category_name" name="category_name" class="validate" required>
+                        <!-- Conditions categories, Category is the variable name and we have tu use category_name -->
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
                             <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -17,6 +18,8 @@
 					<label for="category_name">Task Category</label>
 				</div>
 			</div>
+
+            <!-- Task name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-teal-text text-darken-4"></i>
@@ -33,6 +36,8 @@
                     <label for="task_description">Task Description</label>
                 </div>
             </div>
+            
+            <!-- Due date -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-teal-text text-darken-4"></i>
@@ -40,6 +45,7 @@
                     <label for="due_date">Due Date</label>
                 </div>
             </div>
+            <!-- Toggle for is urgent -->
 			<div class="row">
 				<div class="input-field col s12">
 					<div class="switch">
@@ -52,6 +58,15 @@
 					</div>
 				</div>
 			</div>
+
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large light-teal darken-1 text-shadow">
+                        Add Task <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 
