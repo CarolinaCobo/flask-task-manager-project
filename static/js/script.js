@@ -12,6 +12,8 @@ $(document).ready(function () {
       }
   });
 
+
+  // Modifies the DOM with event listeners so it will flag when it doesn't have input.
   validateMaterializeSelect();
   function validateMaterializeSelect() {
       let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
