@@ -2,9 +2,10 @@
 {% block content %}
 
     <h3 class="light-teal-text text-darken-4 center-align">Add Task</h3>
-    <!-- Category selection -->
+   
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
+            <!-- Category selection -->
 			<div class="row">
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix light-teal-text text-darken-4"></i>
@@ -28,6 +29,7 @@
                     <label for="task_name">Task Name</label>
                 </div>
             </div>
+            <!-- Task description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-teal-text text-darken-4"></i>
